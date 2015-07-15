@@ -1,0 +1,43 @@
+<h1 class="text-left">用户注册</h1>
+<ol class="breadcrumb text-left">
+    <li class="active">第1步</li>
+    <li>第2步</li>
+    <li>第3步</li>
+    <li>完成</li>
+</ol>
+<div class="row">
+    <div class="col-xs-6">
+        <form name="regForm" class="form-horizontal">
+            <div class="form-group">
+                <label for="username" class="col-sm-2 control-label">账&nbsp;&nbsp;号</label>
+                <div class="col-sm-10" ng-class="{'has-error':regForm.username.$invalid&&regForm.username.$dirty}">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="输入手机号码" ng-model="regData.username" ng-required="true" ng-pattern="/^1\d{10}$/">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userpass" class="col-sm-2 control-label">密&nbsp;&nbsp;码</label>
+                <div class="col-sm-10" ng-class="{'has-error':regForm.userpass.$invalid&&regForm.userpass.$dirty}">
+                    <input type="password" class="form-control" id="userpass" name="userpass" placeholder="输入密码(长度为5~10)" ng-model="regData.userpass" ng-required="true" ng-minlength="5" ng-maxlength="10">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="checkpass" class="col-sm-2 control-label">确认密码</label>
+                <div class="col-sm-10" ng-class="{'has-error':(regForm.checkpass.$invalid&&regForm.checkpass.$dirty)||(regForm.userpass.$dirty&&regForm.checkpass.$dirty&&regData.userpass!==regData.checkpass)}">
+                    <input type="password" class="form-control" id="checkpass" name="checkpass" placeholder="再次输入密码" ng-model="regData.checkpass" ng-required="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10 text-left">
+                    <button type="button" class="btn btn-primary" ng-click="submit()" ng-disabled="regForm.$invalid||regData.userpass!==regData.checkpass">下一步</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-xs-6">
+        <div class="jumbotron">
+            <h2>帮助信息</h2>
+            <p>...</p>
+            <p><a class="btn btn-primary btn-lg" ui-sref="tab.help.index" role="button">更多&nbsp;&gt;&gt;</a></p>
+        </div>
+    </div>
+</div>

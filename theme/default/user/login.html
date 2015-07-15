@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-xs-6">
+        <h1>用户登录</h1>
+        <p>&nbsp;</p>
+        <form name="loginForm" class="form-horizontal">
+            <div class="form-group">
+                <label for="username" class="col-sm-2 control-label">账号</label>
+                <div class="col-sm-10" ng-class="{'has-error':loginForm.username.$invalid&&loginForm.username.$dirty}">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="输入手机号码" ng-model="username" ng-required="true" ng-pattern="/^1\d{10}$/">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userpass" class="col-sm-2 control-label">密码</label>
+                <div class="col-sm-10" ng-class="{'has-error':loginForm.userpass.$invalid&&loginForm.userpass.$dirty}">
+                    <input type="password" class="form-control" id="userpass" name="userpass" placeholder="输入密码" ng-model="userpass" ng-required="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10 text-left">
+                    <button type="button" ng-disabled="loginForm.$invalid" class="btn btn-primary" ng-click="submit()">登&nbsp;录</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-xs-6">
+        <div class="jumbotron">
+            <h2>帮助信息</h2>
+            <p>...</p>
+            <p><a class="btn btn-primary btn-lg" ui-sref="tab.help.index" role="button">更多&nbsp;&gt;&gt;</a></p>
+        </div>
+    </div>
+</div>

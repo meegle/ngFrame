@@ -1,0 +1,62 @@
+<div class="padding-top-20">&nbsp;</div>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron padding-30" ng-class="{'animated fadeIn ng-animate ng-enter ng-enter-active':true}" ng-style="{'position':'relative','left':'0','top':'0'}">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Hello, ngFrame!</h1>
+        </div>
+        <div class="col-md-4">
+            <p class="padding-top-10 padding-bottom-10">简单易用的前端MVC框架。</p>
+            <p><a class="btn btn-primary btn-lg" ui-sref="tab.help" role="button">帮助文档 &raquo;</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="row" id="module">
+    <div class="col-md-4 v-hide">
+        <div class="thumbnail">
+            <div class="caption">
+                <h3>AngularJS</h3>
+                <p class="min-height-120">AngularJS是Google开发的纯客户端JavaScript技术的WEB框架，用于扩展、增强HTML功能，它专为构建强大的WEB应用而设计。</p>
+                <p><a class="btn btn-default" target="_blank" href="http://www.angularjs.cn/" role="button">查看详情 &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 v-hide">
+        <div class="thumbnail">
+            <div class="caption">
+                <h3>RequireJS</h3>
+                <p class="min-height-120">RequireJS是一个JavaScript模块加载器。它非常适合在浏览器中使用，同时它也可以用在其他脚本环境，就像 Rhino and Node。<br>使用RequireJS加载模块化脚本将提高代码的加载速度和质量。</p>
+                <p><a class="btn btn-default" target="_blank" href="http://www.requirejs.cn/" role="button">查看详情 &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 v-hide">
+        <div class="thumbnail">
+            <div class="caption">
+                <h3>Bootstrap</h3>
+                <p class="min-height-120">Bootstrap是Twitter推出的一个用于前端开发的开源工具包。<br>它是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。</p>
+                <p><a class="btn btn-default" target="_blank" href="http://www.bootcss.com/" role="button">查看详情 &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(function() {
+    var $cols = $('#module').children('div[class^=col-]');
+    var doShow = function(i) {
+        _.delay(function($el) {
+            $el
+                .addClass('animated bounceIn ng-animate ng-enter ng-enter-active')
+                .css({
+                    'position': 'relative',
+                    'top': 0,
+                    'left': 0
+                })
+                .removeClass('v-hide');
+            if (i < $cols.length - 1) doShow(++i);
+        }, 500, $cols.eq(i));
+    };
+    doShow(0);
+});
+</script>

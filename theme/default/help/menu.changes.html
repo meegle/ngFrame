@@ -1,0 +1,10 @@
+<div class="col-sm-9 col-md-10 main" ng-class="{'animated fadeIn ng-animate ng-enter ng-enter-active':true}" ng-style="{'position':'relative','left':'0','top':'0'}">
+    <h1 class="page-header">更新日志</h1>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="data in dataset" ng-class="{'animated flipInX ng-animate ng-enter ng-enter-active':true}" ng-style="{'position':'relative','left':'0','top':'0'}">
+            <span class="badge">版本&nbsp;{{data.version}}</span>
+            <h4 class="list-group-item-heading">{{data.date}}</h4>
+            <p class="list-group-item-text" ng-repeat="message in data.content">{{message}}</p>
+        </li>
+    </ul>
+</div>

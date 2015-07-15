@@ -1,0 +1,61 @@
+﻿/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+body, html {
+    font-family: 'Microsoft YaHei','Hiragino Sans GB',Helvetica,Arial,'Lucida Grande',sans-serif;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.main-container {
+    padding: 60px 15px 30px;
+}
+.container .text-muted {
+    margin: 20px 0;
+}
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* carousel */
+.carousel-indicators li {
+    width: 16px;
+    height: 16px;
+    margin: 0 5px;
+}
+.carousel-indicators .active {
+    width: 16px; 
+    height: 16px; 
+    margin: 0 5px; 
+    background-color: #fff;
+}
+.carousel-caption {
+    left: 10%;
+    right: 10%;
+}
+.carousel-caption h1 {
+    font-size: 5rem;
+    line-height: 80px;
+}
+.carousel-caption button {
+    font-size: 2.5rem;
+}

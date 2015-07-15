@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-sm-3 col-md-2 sidebar" ng-class="{'animated fadeInLeft ng-animate ng-enter ng-enter-active':true}" ng-style="{'position':'relative'}">
+        <ul class="nav nav-sidebar" ng-repeat="menu in menuList">
+            <li ui-sref-active="active"><a ng-click="changeMenu(menu.state)" ui-sref="{{menu.state}}">{{menu.title}}</a></li>
+        </ul>
+    </div>
+    <ui-view></ui-view>
+</div>

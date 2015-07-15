@@ -1,0 +1,26 @@
+<h1 class="text-left">用户注册</h1>
+<ol class="breadcrumb text-left">
+    <li>第1步</li>
+    <li>第2步</li>
+    <li class="active">第3步</li>
+    <li>完成</li>
+</ol>
+<div class="row">
+    <div class="col-xs-6">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10 text-left">
+                    <button type="button" class="btn btn-default" ng-click="goto('tab.register', {step:1})">上一步</button>
+                    <button type="button" class="btn btn-primary" ng-click="submit()">下一步</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-xs-6">
+        <div class="jumbotron">
+            <h2>帮助信息</h2>
+            <p>...</p>
+            <p><a class="btn btn-primary btn-lg" ui-sref="tab.help.index" role="button">Learn more</a></p>
+        </div>
+    </div>
+</div>
