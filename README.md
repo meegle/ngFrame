@@ -5,7 +5,7 @@
 ##为什么
 
 * 站在巨人的肩膀上
-    * AngularJS - 强大的前端MVC框架。
+    * AngularJS - 强大的前端MV*框架。
     * 借助RequireJS实现Angular的文件模块化加载
         * 分离`controller`、`directive`、`filter`、`service`等。
         * 样式文件的模块化加载。
@@ -16,7 +16,7 @@
 * 简单易扩展
 
 ##怎么做
-<code>$ git clone http://github.com/johnjerome/ngFrame
+<code>$ git clone http://github.com/meegle/ngFrame
 </code>
 
 <code>$ cd ngFrame
