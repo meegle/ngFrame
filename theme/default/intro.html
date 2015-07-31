@@ -1,4 +1,9 @@
 <body>
+<style>
+body {
+    margin-bottom: 0px;
+}
+</style>
 <div id="carousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -60,7 +65,6 @@
 </div>
 <script type="text/javascript">
 $(function() {
-    $('body').addClass('no-margin');
     // 设置 carousel 高度
     var $carousel = $('#carousel');
     $carousel.height($(window).height());
