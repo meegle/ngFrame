@@ -16,13 +16,13 @@
 * 简单易扩展
 
 ##怎么做
-<code>$ git clone http://github.com/meegle/ngFrame
+<code>$ git clone https://github.com/meegle/ngFrame.git
 </code>
 
 <code>$ cd ngFrame
 </code>
 
-<code>$ copy /app/conf/config.sample.js /app/conf/config.js # 根据自己的情况修改配置项
+<code>$ cp /app/conf/config.sample.js /app/conf/config.js # 根据自己的情况修改配置项
 </code>
 
 ##问题反馈
