@@ -1,17 +1,20 @@
 require.config({
+    // 加后缀, 防止缓存
+    urlArgs: 't=' + (new Date()).getTime(),
+
     paths: {
         // 核心
-        'angular': '../lib/angular/angular',
-        'angularAnimate': '../lib/angular/angular-animate',
-        'angularResource': '../lib/angular/angular-resource',
-        'angularSanitize': '../lib/angular/angular-sanitize',
-        'angularTouch': '../lib/angular/angular-touch',
-        'uiRouter': '../lib/angular-ui/angular-ui-router',
+        'angular': '../lib/angular/angular.min',
+        'angularAnimate': '../lib/angular/angular-animate.min',
+        'angularResource': '../lib/angular/angular-resource.min',
+        'angularSanitize': '../lib/angular/angular-sanitize.min',
+        'angularTouch': '../lib/angular/angular-touch.min',
+        'uiRouter': '../lib/angular-ui/angular-ui-router.min',
         'bootstrap': '../lib/bootstrap/js/bootstrap.min',
 
         // 模块化加载
-        'angularAMD': '../lib/requirejs/angularAMD',
-        'ngload': '../lib/requirejs/ngload',
+        'angularAMD': '../lib/requirejs/angularAMD.min',
+        'ngload': '../lib/requirejs/ngload.min',
 
         // ----- 插件 -----
         'jquery': 'plugin/jquery',
@@ -42,7 +45,7 @@ require.config({
     },
     map: {
         '*': {
-            'css': '../lib/requirejs/css'
+            'css': '../lib/requirejs/css.min'
         }
     },
     shim: {

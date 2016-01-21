@@ -7,57 +7,83 @@ define(function () {
         'THEME': {
             // 主题名称
             'name': 'default',
-            // 样式映射
-            'css': [{
-                'state': 'intro',
-                'files': ['../../static/default/css/app', '../../static/default/css/extend']
-            }, {
-                'state': 'tab',
-                'files': ['../../static/default/css/app', '../../static/default/css/extend']
-            }, {
-                'state': 'tab.help',// 状态
-                'files': ['../../static/default/css/dashboard']// 样式文件
-            }]
+            // 依赖配置(样式/脚本)
+            'deps': {
+                'intro': {
+                    'css': [
+                        '../static/default/css/app',
+                        '../static/default/css/extend'
+                    ]
+                },
+                'tab': {
+                    'css': [
+                        '../static/default/css/app',
+                        '../static/default/css/extend'
+                    ]
+                },
+                'tab.help': {
+                    'css': ['../static/default/css/dashboard']
+                }
+            }
         },
         
         /*
         'THEME': {
             'name': 'xeon',
-            'css': [{
-                'state': 'tab',
-                'files': ['../../static/xeon/css/font-awesome.min', '../../static/xeon/css/prettyPhoto']
-            }, {
-                'state': 'tab.index',
-                'files': ['../../static/xeon/css/main']
-            }]
+            'deps': {
+                'tab': {
+                    'css': [
+                        '../static/xeon/css/font-awesome.min',
+                        '../static/xeon/css/prettyPhoto'
+                    ]
+                },
+                'tab.index': {
+                    'css': ['../static/xeon/css/main']
+                }
+            }
         },
         */
         /*
         'THEME': {
             'name': 'amoeba',
-            'css': [{
-                'state': 'tab',
-                'files': ['../../static/amoeba/css/font-awesome']
-            }, {
-                'state': 'tab.index',
-                'files': ['../../static/amoeba/css/isotope', '../../static/amoeba/css/overwrite', '../../static/amoeba/css/style', '../../static/amoeba/skin/default']
-            }]
+            'deps': {
+                'tab': {
+                    'css': ['../static/amoeba/css/font-awesome']
+                },
+                'tab.index': {
+                    'css': [
+                        '../static/amoeba/css/isotope',
+                        '../static/amoeba/css/overwrite',
+                        '../static/amoeba/css/style',
+                        '../static/amoeba/skin/default'
+                    ]
+                }
+            }
         },
         */
         /*
         'THEME': {
             'name': 'capture',
-            'css': [{
-                'state': 'tab',
-                'files': ['../../static/capture/css/animate', '../../static/capture/css/owl.transitions', '../../static/capture/css/owl.carousel.css']
-            }, {
-                'state': 'tab.index',
-                'files': ['../../static/capture/css/main']
-            }],
-            'js': [{
-                'state': 'tab.index',
-                'files': ['../../static/capture/js/ajaxchimp', '../../static/capture/js/scrollTo', '../../static/capture/js/owl.carousel.min', '../../static/capture/js/wow', '../../static/capture/js/parallax', '../../static/capture/js/nicescroll', '../../static/capture/js/main']
-            }]
+            'deps': {
+                'tab': {
+                    'css': [
+                        '../static/capture/css/animate',
+                        '../static/capture/css/owl.transitions',
+                        '../static/capture/css/owl.carousel.css'
+                    ]
+                },
+                'tab.index': {
+                    'css': ['../static/capture/css/main'],
+                    'js': [
+                        '../static/capture/js/ajaxchimp',
+                        '../static/capture/js/scrollTo',
+                        '../static/capture/js/owl.carousel.min',
+                        '../static/capture/js/wow',
+                        '../static/capture/js/parallax',
+                        '../static/capture/js/main'
+                    ]
+                }
+            }
         },
         */
         // 服务端接口

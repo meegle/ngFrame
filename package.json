@@ -1,27 +1,22 @@
 {
   "name": "ngFrame",
   "version": "1.0.0",
-  "description": "http-server",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "description": "a simple front-end mvc framework based on angular.js",
   "dependencies": {
     "http-server": "^0.8.5"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "http-server -a 0.0.0.0 -p 8000"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnjerome/ngFrame.git"
+    "url": "git+https://github.com/meegle/ngFrame.git"
   },
   "author": "meegle",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/johnjerome/ngFrame/issues"
+    "url": "https://github.com/meegle/ngFrame/issues"
   },
-  "homepage": "https://github.com/johnjerome/ngFrame#readme"
+  "homepage": "http://www.meegle.cn/ngFrame/"
 }

@@ -1,7 +1,7 @@
 /**
  * 工具集（数据处理相关）
  */
-define(['moment'], function(moment) {
+define(['moment', 'underscore'], function(moment, _) {
     return {
         // 获取参数对象（用于获取注入）
         get_arg_obj: function() {
@@ -43,6 +43,43 @@ define(['moment'], function(moment) {
             } else {
                 return '';
             }
+        },
+        // 获取依赖资源
+        get_dependences_assets: function(assets) {
+            // 加载依赖
+            var _load = function(deps) {
+                return [
+                    '$q', function($q) {
+                        var def = $q.defer();
+                        require(deps, function() {
+                            def.resolve();
+                        });
+                        return def.promise;
+                    }
+                ];
+            };
+
+            var resolve = {};
+
+            if (!_.isUndefined(assets)) {
+                // 获取样式依赖
+                if (_.isUndefined(assets.css) || _.isArray(assets.css) === false) {
+                    // ...
+                } else {
+                    resolve.css = _load(_.map(assets.css, function(file) {
+                        return 'css!' + file;
+                    }));
+                }
+
+                // 获取脚本依赖
+                if (_.isUndefined(assets.js) || _.isArray(assets.js) === false) {
+                    // ...
+                } else {
+                    resolve.js = _load(assets.js);
+                }
+            }
+
+            return resolve;
         }
     };
 });
