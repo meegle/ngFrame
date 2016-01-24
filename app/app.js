@@ -1,5 +1,5 @@
-define(['angularAMD', 'uiRouter', 'angularAnimate', 'angularResource', 'config'], function (angularAMD) {
-    var app = angular.module('myApp', ['ui.router', 'ngAnimate', 'ngResource']);
+define(['angularAMD', 'uiRouter', 'angularAnimate', 'angularResource', 'config', 'util'], function (angularAMD) {
+    var app = angular.module('ngFrame', ['ui.router', 'ngAnimate', 'ngResource']);
 
     // 全局配置
     app.constant('settings', require('config'));
@@ -10,6 +10,8 @@ define(['angularAMD', 'uiRouter', 'angularAnimate', 'angularResource', 'config']
 
     app.config(function($stateProvider, $urlRouterProvider, settings) {
         $urlRouterProvider.when('', '/');
+
+        var util = require('util');
 
         // AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
@@ -24,7 +26,8 @@ define(['angularAMD', 'uiRouter', 'angularAnimate', 'angularResource', 'config']
         .state('intro', angularAMD.route({
                 url: '/intro',
                 templateUrl: 'theme/' + settings.THEME.name + '/intro.html',
-                controllerUrl: 'controller/introCtrl'
+                controllerUrl: 'controller/introCtrl',
+                resolve: util.get_dependences_assets(settings.THEME.deps['intro'])
             })
         )
         // setup an abstract state for the tabs directive
@@ -32,7 +35,8 @@ define(['angularAMD', 'uiRouter', 'angularAnimate', 'angularResource', 'config']
                 url: '/tab',
                 abstract: true,
                 templateUrl: 'theme/' + settings.THEME.name + '/tabs.html',
-                controllerUrl: 'controller/rootCtrl'
+                controllerUrl: 'controller/rootCtrl',
+                resolve: util.get_dependences_assets(settings.THEME.deps['tab'])
             })
         )
         // Each tab has its own nav history stack:
@@ -40,21 +44,24 @@ define(['angularAMD', 'uiRouter', 'angularAnimate', 'angularResource', 'config']
         .state('tab.index', angularAMD.route({
                 url: '/index',
                 templateUrl: 'theme/' + settings.THEME.name + '/index/index.html',
-                controllerUrl: 'controller/index/indexCtrl'
+                controllerUrl: 'controller/index/indexCtrl',
+                resolve: util.get_dependences_assets(settings.THEME.deps['tab.index'])
             })
         )
         // ----- 用户 -----
         .state('tab.user', angularAMD.route({
                 url: '/user',
                 templateUrl: 'theme/' + settings.THEME.name + '/user/index.html',
-                controllerUrl: 'controller/user/indexCtrl'
+                controllerUrl: 'controller/user/indexCtrl',
+                resolve: util.get_dependences_assets(settings.THEME.deps['tab.user'])
             })
         )
         // 登入
         .state('tab.login', angularAMD.route({
                 url: '/user/login',
                 templateUrl: 'theme/' + settings.THEME.name + '/user/login.html',
-                controllerUrl: 'controller/user/loginCtrl'
+                controllerUrl: 'controller/user/loginCtrl',
+                resolve: util.get_dependences_assets(settings.THEME.deps['tab.login'])
             })
         )
         // 注册
@@ -64,14 +71,16 @@ define(['angularAMD', 'uiRouter', 'angularAnimate', 'angularResource', 'config']
                     var step = parseInt($stateParams.step);
                     return 'theme/' + settings.THEME.name + '/user/register' + (step ? '-' + step : '') + '.html';
                 },
-                controllerUrl: 'controller/user/registerCtrl'
+                controllerUrl: 'controller/user/registerCtrl',
+                resolve: util.get_dependences_assets(settings.THEME.deps['tab.register'])
             })
         )
         // ----- 帮助 -----
         .state('tab.help', angularAMD.route({
                 url: '/help',
                 templateUrl: 'theme/' + settings.THEME.name + '/help/menu.html',
-                controllerUrl: 'controller/help/menuCtrl'
+                controllerUrl: 'controller/help/menuCtrl',
+                resolve: util.get_dependences_assets(settings.THEME.deps['tab.help'])
             })
         )
         // 首页
