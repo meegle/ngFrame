@@ -1,8 +1,8 @@
-##是什么
+## 是什么
 
 一款基于Angular的前端MVC框架，简单易用。
 
-##为什么
+## 为什么
 
 * 站在巨人的肩膀上
     * AngularJS - 强大的前端MV*框架。
@@ -15,7 +15,7 @@
     * Bootstrap - 简洁、直观、强悍、移动设备优先的前端开发框架（非必须）。
 * 简单易扩展
 
-##怎么做
+## 怎么做
 <code>$ git clone https://github.com/meegle/ngFrame.git
 </code>
 
@@ -25,7 +25,7 @@
 <code>$ cp /app/conf/config.sample.js /app/conf/config.js # 根据自己的情况修改配置项
 </code>
 
-##问题反馈
+## 问题反馈
 这是本人为数不多的开源项目之一，这个框架也是集结了一些强大的框架/组件/库等。
 
 主要目的是汇总并整理出自己的一套前端框架，便于日常的快速迭代开发。
